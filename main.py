@@ -4,7 +4,7 @@ import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
 
-train_new_model = True
+train_new_model = False
 
 if train_new_model:
     mnist = tf.keras.datasets.mnist
@@ -21,7 +21,7 @@ if train_new_model:
 
     model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
-    model.fit(X_train, y_train, epochs=3)
+    model.fit(X_train, y_train, epochs=4)
 
     val_loss, val_acc = model.evaluate(X_test, y_test)
     print(val_loss)
